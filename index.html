@@ -1,728 +1,148 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
   <title>ÉLÉVE PÂTISSERIE｜艾列芙甜點</title>
-  <meta name="description" content="ÉLÉVE PÂTISSERIE｜艾列芙甜點。Elevating Simple Pleasures. 巴斯克乳酪蛋糕、絲滑布丁禮盒、法式檸檬塔與瑪德蓮。" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root{
-      --bg: #fbf7f2;
-      --surface: #ffffff;
-      --text: #2b2622;
-      --muted: #6a5f57;
-      --brand: #b07a5c;      /* warm caramel */
-      --brand-2:#7b4b3a;     /* cocoa */
-      --accent:#f2d6c7;      /* blush */
-      --line: rgba(43,38,34,.12);
-      --shadow: 0 14px 40px rgba(43,38,34,.12);
-      --radius: 18px;
-      --radius-lg: 28px;
-      --max: 1100px;
-
-      --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-              "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
-      --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino,
-               "Noto Serif TC", "Songti TC", serif;
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #faf7f2;
+      color: #2c2c2c;
+      line-height: 1.8;
     }
-
-    *{ box-sizing: border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: var(--font);
-      color: var(--text);
-      background: radial-gradient(1200px 600px at 20% 0%, #fff 0%, var(--bg) 60%, #f9f2ea 100%);
-      line-height:1.6;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    a{ color: inherit; text-decoration: none; }
-    img{ max-width:100%; display:block; }
-
-    /* Layout */
-    .container{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
-    .section{ padding: 72px 0; }
-    .grid{ display:grid; gap: 22px; }
-
-    /* Top bar */
-    .topbar{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(10px);
-      background: rgba(251,247,242,.72);
-      border-bottom: 1px solid var(--line);
-    }
-    .topbar-inner{
-      display:flex;
-      align-items:center;
+    header {
+      padding: 24px 32px;
+      display: flex;
       justify-content: space-between;
-      padding: 14px 0;
+      align-items: center;
     }
-    .brandmark{
-      display:flex;
-      gap: 12px;
-      align-items:center;
-      letter-spacing:.08em;
-    }
-    .logo{
-      width: 34px; height: 34px;
-      border-radius: 12px;
-      background: conic-gradient(from 210deg, var(--brand), #d7a489, #f3d7c8, var(--brand-2));
-      box-shadow: 0 10px 24px rgba(176,122,92,.25);
-    }
-    .brandmark .name{
-      font-family: var(--serif);
-      font-weight: 700;
-      font-size: 15px;
-    }
-    .brandmark .sub{
-      display:block;
-      font-family: var(--font);
-      letter-spacing:.02em;
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: #2c2c2c;
       font-weight: 500;
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: -2px;
     }
-    .nav{
-      display:flex;
-      gap: 14px;
-      align-items:center;
+    nav a:hover {
+      text-decoration: underline;
     }
-    .nav a{
-      padding: 8px 10px;
-      border-radius: 12px;
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 13px;
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 80px 32px;
     }
-    .nav a:hover{ background: rgba(176,122,92,.10); color: var(--brand-2); }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
-      padding: 12px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(176,122,92,.35);
-      background: linear-gradient(180deg, #fff 0%, #fff7f2 100%);
-      color: var(--brand-2);
-      font-weight: 800;
-      box-shadow: 0 10px 24px rgba(43,38,34,.06);
-      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-      cursor:pointer;
+    h1 {
+      font-size: 42px;
+      margin-bottom: 16px;
     }
-    .btn:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(43,38,34,.10);
-      background: linear-gradient(180deg, #fff 0%, #fff1e9 100%);
-    }
-    .btn.primary{
-      border: 1px solid rgba(176,122,92,.45);
-      background: linear-gradient(180deg, #c08a6b 0%, #a96f55 100%);
-      color: #fff;
-      box-shadow: 0 16px 36px rgba(176,122,92,.32);
-    }
-    .btn.primary:hover{
-      box-shadow: 0 22px 50px rgba(176,122,92,.42);
-    }
-    .btn .dot{
-      width: 8px; height: 8px; border-radius: 50%;
-      background: rgba(255,255,255,.9);
-      box-shadow: 0 0 0 4px rgba(255,255,255,.18);
-    }
-
-    /* Hero */
-    .hero{
-      padding: 42px 0 30px;
-    }
-    .hero-card{
-      position: relative;
-      overflow:hidden;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      background: linear-gradient(120deg, rgba(255,255,255,.75), rgba(255,255,255,.55));
-    }
-    .hero-inner{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 26px;
-      padding: 42px;
-      align-items:center;
-    }
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(242,214,199,.55);
-      border: 1px solid rgba(176,122,92,.22);
-      color: var(--brand-2);
-      font-weight: 800;
-      font-size: 12px;
-      letter-spacing: .08em;
-    }
-    h1{
-      font-family: var(--serif);
-      line-height:1.15;
-      margin: 16px 0 12px;
-      font-size: clamp(34px, 4vw, 52px);
-      letter-spacing: .01em;
-    }
-    .hero p{
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 16px;
-      max-width: 56ch;
-    }
-    .hero-actions{
-      display:flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items:center;
-      margin-top: 16px;
-    }
-    .hero-meta{
-      display:flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .meta-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.65);
-    }
-    .meta-pill svg{ opacity:.7; }
-
-    .hero-art{
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      overflow:hidden;
-      box-shadow: 0 18px 40px rgba(43,38,34,.10);
-      background: #fff;
-    }
-    .hero-art .art{
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      background:
-        radial-gradient(360px 260px at 65% 35%, rgba(242,214,199,.95), rgba(242,214,199,0) 60%),
-        radial-gradient(360px 260px at 40% 60%, rgba(176,122,92,.28), rgba(176,122,92,0) 60%),
-        linear-gradient(135deg, #ffffff 0%, #fff6ef 45%, #f6e6db 100%);
-      position: relative;
-    }
-    .hero-art .art:before{
-      content:"";
-      position:absolute;
-      inset: 14px;
-      border-radius: 18px;
-      border: 1px dashed rgba(176,122,92,.38);
-      background:
-        radial-gradient(120px 90px at 32% 35%, rgba(122,75,58,.10), rgba(122,75,58,0) 60%),
-        radial-gradient(120px 90px at 70% 65%, rgba(176,122,92,.12), rgba(176,122,92,0) 62%);
-    }
-    .hero-art .caption{
-      padding: 14px 16px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 13px;
-      background: rgba(255,255,255,.75);
-    }
-
-    /* About */
-    .section-title{
-      display:flex;
-      align-items:flex-end;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 18px;
-    }
-    .section-title h2{
-      font-family: var(--serif);
-      margin:0;
+    h2 {
       font-size: 28px;
-      letter-spacing: .01em;
+      margin-bottom: 24px;
     }
-    .section-title p{
-      margin:0;
-      color: var(--muted);
-      max-width: 60ch;
-      font-size: 14px;
+    .hero {
+      text-align: center;
+      padding-top: 40px;
     }
-    .about{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      align-items: stretch;
+    .hero p {
+      color: #555;
     }
-    .panel{
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.75);
-      box-shadow: 0 12px 30px rgba(43,38,34,.06);
-      padding: 22px;
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
     }
-    .panel h3{
-      margin:0 0 10px;
-      font-size: 16px;
-      letter-spacing:.02em;
-    }
-    .panel p{ margin:0; color: var(--muted); }
-    .values{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-    .value{
-      display:flex;
-      gap: 12px;
-      padding: 14px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.72);
-    }
-    .value .icon{
-      width: 36px; height: 36px;
-      border-radius: 14px;
-      background: rgba(242,214,199,.65);
-      display:grid; place-items:center;
-      border: 1px solid rgba(176,122,92,.18);
-      flex: 0 0 auto;
-    }
-    .value .t{ font-weight: 900; }
-    .value .d{ color: var(--muted); font-size: 13px; margin-top: 2px; }
-
-    /* Products */
-    .products{
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .card{
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow:hidden;
-      background: rgba(255,255,255,.85);
-      box-shadow: 0 14px 34px rgba(43,38,34,.08);
-      transition: transform .16s ease, box-shadow .16s ease;
-    }
-    .card:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 22px 54px rgba(43,38,34,.12);
-    }
-    .card .img{
-      aspect-ratio: 4 / 3;
+    .menu-item {
       background: #fff;
-      position: relative;
-      overflow:hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
     }
-    .card .img img{
-      width:100%;
-      height:100%;
+    .menu-item img {
+      width: 100%;
+      height: 220px;
       object-fit: cover;
+      background: #eee;
     }
-    .tag{
-      position:absolute;
-      top: 12px; left: 12px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 900;
-      color: #fff;
-      background: rgba(122,75,58,.88);
-      border: 1px solid rgba(255,255,255,.25);
-      box-shadow: 0 12px 26px rgba(43,38,34,.18);
+    .menu-item div {
+      padding: 20px;
     }
-    .card .body{
-      padding: 18px 18px 16px;
-    }
-    .card h3{
-      margin: 0 0 6px;
-      font-size: 16px;
-      letter-spacing:.01em;
-    }
-    .card p{
-      margin: 0 0 12px;
-      color: var(--muted);
-      font-size: 13px;
-      min-height: 40px;
-    }
-    .price-row{
-      display:flex;
-      align-items:baseline;
-      justify-content: space-between;
-      gap: 10px;
-      margin-top: 8px;
-    }
-    .price{
-      font-weight: 1000;
-      color: var(--brand-2);
-      letter-spacing:.01em;
-    }
-    .small{
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    /* Order */
-    .order{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-    .form{
-      display:grid;
-      gap: 12px;
-    }
-    .field{
-      display:grid;
-      gap: 6px;
-    }
-    label{
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 700;
-    }
-    input, textarea, select{
-      width:100%;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.92);
-      font-family: var(--font);
+    footer {
+      text-align: center;
+      padding: 40px 20px;
       font-size: 14px;
-      outline: none;
-    }
-    input:focus, textarea:focus, select:focus{
-      border-color: rgba(176,122,92,.55);
-      box-shadow: 0 0 0 4px rgba(176,122,92,.14);
-    }
-    textarea{ min-height: 92px; resize: vertical; }
-
-    .note{
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 8px;
-    }
-    .footer{
-      padding: 26px 0 46px;
-      color: var(--muted);
-      font-size: 13px;
-      border-top: 1px solid var(--line);
-    }
-
-    /* Responsive */
-    @media (max-width: 920px){
-      .hero-inner{ grid-template-columns: 1fr; padding: 26px; }
-      .about{ grid-template-columns: 1fr; }
-      .products{ grid-template-columns: 1fr; }
-      .order{ grid-template-columns: 1fr; }
-      .nav{ display:none; }
+      color: #888;
     }
   </style>
 </head>
 
 <body>
-  <!-- Top Bar -->
-  <header class="topbar">
-    <div class="container topbar-inner">
-      #top
-        <span class="logo" aria-hidden="true"></span>
-        <span>
-          <span class="name">ÉLÉVE PÂTISSERIE</span>
-          <span class="sub">艾列芙甜點 · Elevating Simple Pleasures</span>
-        </span>
-      </a>
 
-      <nav class="nav" aria-label="主要導覽">
-        #about品牌介紹</a>
-        #products精選商品</a>
-        #order立即訂購</a>
-      </nav>
+<header>
+  <strong>ÉLÉVE PÂTISSERIE</strong>
+  <nav>
+    About
+    Menu
+    Order
+  </nav>
+</header>
 
-      #order
-        <span class="dot" aria-hidden="true"></span>
-        立即訂購
-      </a>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <main id="top" class="hero">
-    <div class="container">
-      <section class="hero-card" aria-label="首頁主視覺">
-        <div class="hero-inner">
-          <div>
-            <span class="kicker">BOUTIQUE DESSERTS · 低甜度精品甜點</span>
-            <h1>Elevating Simple Pleasures.</h1>
-            <p>
-              把甜點，昇華成日常最溫柔的儀式。ÉLÉVE 以單純原料與細緻手作，
-              將熟悉的風味做到「耐吃、耐想、耐回味」——剛剛好的甜，高級的剛剛好。
-            </p>
-
-            <div class="hero-actions">
-              #products查看精選商品</a>
-              #about認識 ÉLÉVE</a>
-            </div>
-
-            <div class="hero-meta" aria-label="品牌特色">
-              <span class="meta-pill">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 21s7-4.6 7-11a7 7 0 1 0-14 0c0 6.4 7 11 7 11Z" stroke="currentColor" stroke-width="2"/>
-                  <path d="M9.5 10.5 11 12l3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                低甜度 · 風味清晰
-              </span>
-              <span class="meta-pill">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4 13c2.5-3 5.5-4.5 8-4.5S17.5 10 20 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M6 16c1.8-2 3.9-3 6-3s4.2 1 6 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M8.5 18c1-1 2.2-1.5 3.5-1.5s2.5.5 3.5 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                精品禮盒 · 送禮體面
-              </span>
-              <span class="meta-pill">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M20 7H4l2 13h12l2-13Z" stroke="currentColor" stroke-width="2"/>
-                  <path d="M7 7a5 5 0 0 1 10 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                預訂取貨 · 新鮮製作
-              </span>
-            </div>
-          </div>
-
-          <aside class="hero-art" aria-label="主視覺圖片區">
-            <div class="art" role="img" aria-label="溫暖奶油色系主視覺"></div>
-            <div class="caption">用一份剛剛好的甜，讓今天更值得。</div>
-          </aside>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <!-- About -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-title">
-        <h2>品牌介紹</h2>
-        <p>ÉLÉVE 相信真正高級的甜點，不需要張揚；只要在每一口裡，留下乾淨而細緻的餘韻。</p>
-      </div>
-
-      <div class="about">
-        <div class="panel">
-          <h3>ÉLÉVE PÂTISSERIE｜艾列芙甜點</h3>
-          <p>
-            我們以「剛剛好的甜」為標準：不膩口、風味有層次、吃完仍然想再來一口。
-            從巴斯克乳酪蛋糕的焦香流心，到布丁禮盒的絲滑細緻，
-            都為你的日常保留一點溫柔的儀式感。
-          </p>
-          <p class="note">
-            ＊適合送禮、探訪、慶祝小確幸，也適合單純犒賞自己。
-          </p>
-        </div>
-
-        <div class="panel values" aria-label="品牌價值">
-          <div class="value">
-            <div class="icon" aria-hidden="true">✨</div>
-            <div>
-              <div class="t">低調的精緻</div>
-              <div class="d">不堆砌、不浮誇，用細節堆出質感。</div>
-            </div>
-          </div>
-          <div class="value">
-            <div class="icon" aria-hidden="true">🧈</div>
-            <div>
-              <div class="t">風味清晰耐吃</div>
-              <div class="d">甜度克制，讓茶香、奶香、可可真正被品嚐。</div>
-            </div>
-          </div>
-          <div class="value">
-            <div class="icon" aria-hidden="true">🎁</div>
-            <div>
-              <div class="t">送禮剛剛好</div>
-              <div class="d">體面包裝與穩定品質，送出去很安心。</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Products -->
-  <section id="products" class="section">
-    <div class="container">
-      <div class="section-title">
-        <h2>精選商品</h2>
-        <p>三款代表 ÉLÉVE 的風格：經典巴斯克、體面布丁禮盒、午後法式小點。</p>
-      </div>
-
-      <div class="grid products">
-        <!-- Product 1 -->
-        <article class="card" aria-label="巴斯克乳酪蛋糕">
-          <div class="img">
-            <span class="tag">Signature</span>
-            data:image/svg+xml;utf8,
-              <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='900'>
-                <defs>
-                  <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-                    <stop offset='0' stop-color='%23ffffff'/>
-                    <stop offset='0.5' stop-color='%23fff3ea'/>
-                    <stop offset='1' stop-color='%23f2d6c7'/>
-                  </linearGradient>
-                  <radialGradient id='r' cx='55%25' cy='40%25' r='60%25'>
-                    <stop offset='0' stop-color='%23b07a5c' stop-opacity='0.22'/>
-                    <stop offset='1' stop-color='%23b07a5c' stop-opacity='0'/>
-                  </radialGradient>
-                </defs>
-                <rect width='1200' height='900' fill='url(%23g)'/>
-                <rect width='1200' height='900' fill='url(%23r)'/>
-                <circle cx='600' cy='470' r='260' fill='%23ffffff' opacity='0.75'/>
-                <circle cx='600' cy='470' r='210' fill='%23b07a5c' opacity='0.18'/>
-                <circle cx='600' cy='470' r='160' fill='%237b4b3a' opacity='0.12'/>
-                <text x='70' y='140' font-family='Georgia' font-size='54' fill='%237b4b3a' opacity='0.9'>Basque Cheesecake</text>
-                <text x='70' y='205' font-family='Arial' font-size='26' fill='%236a5f57' opacity='0.9'>Earl Grey · Dark Chocolate · Vanilla</text>
-              </svg>
-          </div>
-          <div class="body">
-            <h3>ÉLÉVE 巴斯克乳酪蛋糕</h3>
-            <p>外層微焦、內餡濕潤流心。甜度克制，茶香 / 可可 / 香草風味乾淨清晰。</p>
-            <div class="price-row">
-              <div class="price">6 吋 NT$680 <span class="small">｜8 吋 NT$980</span></div>
-              #order選擇口味</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Product 2 -->
-        <article class="card" aria-label="絲滑布丁禮盒">
-          <div class="img">
-            <span class="tag">Gift</span>
-            data:image/svg+xml;utf8,
-              <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='900'>
-                <defs>
-                  <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-                    <stop offset='0' stop-color='%23ffffff'/>
-                    <stop offset='0.55' stop-color='%23fff7f2'/>
-                    <stop offset='1' stop-color='%23f6e6db'/>
-                  </linearGradient>
-                </defs>
-                <rect width='1200' height='900' fill='url(%23g)'/>
-                <rect x='120' y='230' width='260' height='430' rx='40' fill='%23ffffff' opacity='0.85' stroke='%23b07a5c' stroke-opacity='0.25' stroke-width='6'/>
-                <rect x='470' y='230' width='260' height='430' rx='40' fill='%23ffffff' opacity='0.85' stroke='%23b07a5c' stroke-opacity='0.25' stroke-width='6'/>
-                <rect x='820' y='230' width='260' height='430' rx='40' fill='%23ffffff' opacity='0.85' stroke='%23b07a5c' stroke-opacity='0.25' stroke-width='6'/>
-                <rect x='150' y='310' width='200' height='290' rx='32' fill='%23f2d6c7' opacity='0.75'/>
-                <rect x='500' y='310' width='200' height='290' rx='32' fill='%23b07a5c' opacity='0.22'/>
-                <rect x='850' y='310' width='200' height='290' rx='32' fill='%237b4b3a' opacity='0.18'/>
-                <text x='70' y='140' font-family='Georgia' font-size='54' fill='%237b4b3a' opacity='0.9'>Silken Pudding Box</text>
-                <text x='70' y='205' font-family='Arial' font-size='26' fill='%236a5f57' opacity='0.9'>Vanilla Bean · Caramel · Earl Grey (Seasonal)</text>
-              </svg>
-          </div>
-          <div class="body">
-            <h3>絲滑布丁禮盒</h3>
-            <p>入口即化的細緻口感，玻璃瓶盛裝、簡約體面。探訪祝賀、公司送禮都很剛好。</p>
-            <div class="price-row">
-              <div class="price">4 入 NT$520 <span class="small">｜6 入 NT$760</span></div>
-              #order做成禮盒</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Product 3 -->
-        <article class="card" aria-label="法式檸檬塔與瑪德蓮">
-          <div class="img">
-            <span class="tag">Tea Time</span>
-            data:image/svg+xml;utf8,
-              <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='900'>
-                <defs>
-                  <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-                    <stop offset='0' stop-color='%23ffffff'/>
-                    <stop offset='0.55' stop-color='%23fff6ef'/>
-                    <stop offset='1' stop-color='%23f2d6c7'/>
-                  </linearGradient>
-                  <radialGradient id='r' cx='35%25' cy='55%25' r='55%25'>
-                    <stop offset='0' stop-color='%23ffd86b' stop-opacity='0.35'/>
-                    <stop offset='1' stop-color='%23ffd86b' stop-opacity='0'/>
-                  </radialGradient>
-                </defs>
-                <rect width='1200' height='900' fill='url(%23g)'/>
-                <rect width='1200' height='900' fill='url(%23r)'/>
-                <circle cx='420' cy='520' r='190' fill='%23ffffff' opacity='0.75'/>
-                <circle cx='420' cy='520' r='150' fill='%23ffd86b' opacity='0.35'/>
-                <rect x='700' y='380' width='360' height='280' rx='60' fill='%23ffffff' opacity='0.72'/>
-                <rect x='740' y='430' width='280' height='180' rx='46' fill='%23b07a5c' opacity='0.16'/>
-                <text x='70' y='140' font-family='Georgia' font-size='54' fill='%237b4b3a' opacity='0.9'>Lemon Tart & Madeleine</text>
-                <text x='70' y='205' font-family='Arial' font-size='26' fill='%236a5f57' opacity='0.9'>Bright · Clean · Perfect with coffee or tea</text>
-              </svg>
-          </div>
-          <div class="body">
-            <h3>法式檸檬塔 & 瑪德蓮</h3>
-            <p>檸檬塔清爽酸香、低甜不膩；瑪德蓮外殼微酥、內裡柔軟，為午後留一點餘裕。</p>
-            <div class="price-row">
-              <div class="price">檸檬塔 NT$150 <span class="small">｜瑪德蓮 NT$70</span></div>
-              #order加到購物車</a>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div style="margin-top:18px; text-align:center;">
-        #order<span class="dot" aria-hidden="true"></span>立即訂購，保留今日的甜</a>
-        <div class="note">＊可於備註填寫：口味、數量、取貨日期與時段（示範頁面可自行串接表單/金流）。</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Order -->
-<section id="order" style="margin-top:60px;">
-  <h2>Order｜訂購</h2>
-  <p style="max-width:720px;">
-    請直接在下方填寫訂購單。我們將於確認後與您聯繫取貨時間與訂單細節。
-  </p>
-
-  <div style="
-    margin-top:18px;
-    border-radius:10px;
-    overflow:hidden;
-    background:#ffffff;
-    box-shadow:0 10px 30px rgba(0,0,0,0.06);
-  ">
-    <!-- 把 Microsoft Forms 的 embed code（iframe）貼在這行下面 -->
-    <iframe width="100%" height="900" src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__Ua58c5UN1hLN0NGNUE2QzFYMU5QUjZRRFZBNE5DSC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
-Fill | ELEVE PATISSERIE I 訂購單
-感謝您選擇
- 
-  </div>
-
-  <p style="margin-top:14px; font-size:14px; color:#888;">
-    若表單無法顯示，請改用外部連結填寫：
-    <!-- 這裡放你的表單連結（非 iframe）做備援 -->
-    <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__Ua58c5UN1hLN0NGNUE2QzFYMU5QUjZRRFZBNE5DSC4u" target="_blank" rel="noopener noreferrer">Open order form</a>
+<section class="hero">
+  <h1>ÉLÉVE PÂTISSERIE</h1>
+  <p>
+    French-inspired desserts, elevated with restraint and taste.<br />
+    法式靈感甜點，為懂得品味的人而生。
   </p>
 </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div style="display:flex; gap:12px; justify-content:space-between; flex-wrap:wrap; align-items:center;">
-        <div>© <span id="year"></span> ÉLÉVE PÂTISSERIE｜艾列芙甜點</div>
-        <div>Elevating Simple Pleasures.</div>
-      </div>
-    </div>
-  </footer>
+<section id="about">
+  <h2>About ÉLÉVE</h2>
+  <p>
+    ÉLÉVE 在法文中意指「提升、昇華」。  
+    我們專注於不過度裝飾的法式甜點，  
+    將風味、口感與細節，提升到恰到好處的平衡。
+  </p>
+</section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<section id="menu">
+  <h2>Signature Selection</h2>
+
+  <div class="menu-grid">
+    <div class="menu-item">
+      ./images/basque.jpg
+      <div>巴斯克乳酪蛋糕 — 茶香 / 巧克力 / 香草</div>
+    </div>
+
+    <div class="menu-item">
+      ./images/lemon-tart.jpg
+      <div>檸檬塔</div>
+    </div>
+
+    <div class="menu-item">
+      ./images/madeleine.jpg
+      <div>瑪德蓮</div>
+    </div>
+  </div>
+</section>
+
+<section id="order">
+  <h2>Order｜訂購</h2>
+  <p>請直接填寫以下訂購單，我們將與您聯繫確認訂單細節。</p>
+
+  <!-- 請在這裡貼上 Microsoft Forms 的 iframe -->
+<iframe
+  src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__Ua58c5UN1hLN0NGNUE2QzFYMU5QUjZRRFZBNE5DSC4u&embed=true"
+  width="100%"
+  height="900"
+  frameborder="0"
+  style="border: none; background: transparent;"
+  allowfullscreen>
+</iframe>
+</section>
+
+<footer>
+  © ÉLÉVE PÂTISSERIE
+</footer>
+
 </body>
 </html>
