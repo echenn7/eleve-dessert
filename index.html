@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-  <img
-  src="https://echenn7.github.io/eleve-dessert/images/basque.jpg"
-  style="display:block !important; width:300px; border:5px solid red;"
->
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>ÉLÉVE PÂTISSERIE｜艾列芙甜點</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
       margin: 0;
@@ -16,174 +13,120 @@
       color: #2c2c2c;
       line-height: 1.8;
     }
-    header {
-      padding: 24px 32px;
-      display: flex;
-      
-    <section id="menu">
-  <h2>Signature Selection</h2>
 
-  <div class="menu-grid">
-
-    <div class="menu-item">
-  <img
-  src="https://echenn7.github.io/eleve-dessert/images/basque.jpg"
-  alt="巴斯克乳酪蛋糕"
-  style="
-    display:block !important;
-    width:100% !important;
-    height:auto !important;
-    max-height:none !important;
-    visibility:visible !important;
-    border:5px solid red !important;
-  "
->
-
-      <div>巴斯克乳酪蛋糕 — 茶香 / 巧克力 / 香草</div>
-    </div>
-
-    <div class="menu-item">
-      <img src="/eleve-dessert/images/lemon-tart.jpg" alt="檸檬塔">
-      <div>檸檬塔</div>
-    </div>
-
-    <div class="menu-item">
-      <img src="/eleve-dessert/images/madeleine.jpg" alt="瑪德蓮">
-      <div>瑪德蓮</div>
-    </div>
-
-  </div>
-</section>
-      justify-content: space-between;
-      align-items: center;
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px;
     }
-    nav a {
-      margin-left: 24px;
-      text-decoration: none;
-      color: #2c2c2c;
-      font-weight: 500;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 80px 32px;
-    }
+
     h1 {
       font-size: 42px;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
     }
+
     h2 {
-      font-size: 28px;
+      margin-top: 64px;
       margin-bottom: 24px;
+      font-size: 28px;
     }
-    .hero {
-      text-align: center;
-      padding-top: 40px;
-    }
-    .hero p {
+
+    p {
       color: #555;
     }
+
     .menu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
+      gap: 24px;
     }
+
     .menu-item {
-      background: #fff;
+      background: #ffffff;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
     }
+
     .menu-item img {
+      display: block;
       width: 100%;
       height: 220px;
       object-fit: cover;
       background: #eee;
     }
-    .menu-item div {
-      padding: 20px;
+
+    .menu-item .desc {
+      padding: 16px;
+      font-size: 15px;
     }
+
     footer {
-      text-align: center;
-      padding: 40px 20px;
+      margin-top: 80px;
       font-size: 14px;
       color: #888;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <strong>ÉLÉVE PÂTISSERIE</strong>
-  <nav>
-    About
-    Menu
-    Order
-  </nav>
-</header>
+  <div class="container">
 
-<section class="hero">
-  <h1>ÉLÉVE PÂTISSERIE</h1>
-  <p>
-    French-inspired desserts, elevated with restraint and taste.<br />
-    法式靈感甜點，為懂得品味的人而生。
-  </p>
-</section>
+    <!-- Header -->
+    <header>
+      <h1>ÉLÉVE PÂTISSERIE</h1>
+      <p>
+        French-inspired desserts, elevated with restraint and taste.<br>
+        法式靈感甜點，為懂得品味的人而生。
+      </p>
+    </header>
 
-<section id="about">
-  <h2>About ÉLÉVE</h2>
-  <p>
-    ÉLÉVE 在法文中意指「提升、昇華」。  
-    我們專注於不過度裝飾的法式甜點，  
-    將風味、口感與細節，提升到恰到好處的平衡。
-  </p>
-</section>
+    <!-- Menu -->
+    <section id="menu">
+      <h2>Signature Selection</h2>
 
-<section id="menu">
-  <h2>Signature Selection</h2>
+      <div class="menu-grid">
 
-  <div class="menu-grid">
+        <div class="menu-item">
+          <img src="/eleve-dessert/images/basque.jpg" alt="巴斯克乳酪蛋糕">
+          <div class="desc">
+            巴斯克乳酪蛋糕 — 茶香 / 巧克力 / 香草
+          </div>
+        </div>
 
-    <div class="menu-item">
-      ./images/basque.jpg
-      <div>巴斯克乳酪蛋糕 — 茶香 / 巧克力 / 香草</div>
-    </div>
+        <div class="menu-item">
+          <img src="/eleve-dessert/images/lemon-tart.jpg" alt="檸檬塔">
+          <div class="desc">
+            檸檬塔
+          </div>
+        </div>
 
-    <div class="menu-item">
-      ./images/lemon-tart.jpg
-      <div>檸檬塔</div>
-    </div>
+        <div class="menu-item">
+          <img src="/eleve-dessert/images/madeleine.jpg" alt="瑪德蓮">
+          <div class="desc">
+            瑪德蓮
+          </div>
+        </div>
 
-    <div class="menu-item">
-      ./images/madeleine.jpg
-      <div>瑪德蓮</div>
-    </div>
+      </div>
+    </section>
+
+    <!-- Order -->
+    <section id="order">
+      <h2>Order｜訂購</h2>
+      <p>請填寫以下訂購單，我們將與您聯繫確認訂單細節。</p>
+
+      <!-- ✅ 請把你的 Microsoft Forms iframe 貼在這裡 -->
+      <iframe width="640px" height="480px" src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__Ua58c5UN1hLN0NGNUE2QzFYMU5QUjZRRFZBNE5DSC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+    </section>
+
+    <footer>
+      © ÉLÉVE PÂTISSERIE
+    </footer>
 
   </div>
-</section>
-
-<section id="order">
-  <h2>Order｜訂購</h2>
-  <p>請直接填寫以下訂購單，我們將與您聯繫確認訂單細節。</p>
-
-  <!-- 請在這裡貼上 Microsoft Forms 的 iframe -->
-<iframe
-  src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__Ua58c5UN1hLN0NGNUE2QzFYMU5QUjZRRFZBNE5DSC4u&embed=true"
-  width="100%"
-  height="900"
-  frameborder="0"
-  style="border: none; background: transparent;"
-  allowfullscreen>
-</iframe>
-</section>
-
-<footer>
-  © ÉLÉVE PÂTISSERIE
-</footer>
 
 </body>
 </html>
